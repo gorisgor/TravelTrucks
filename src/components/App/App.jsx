@@ -1,11 +1,12 @@
-import css from './App.module.css'
+import CampersList from "../CampersList/CampersList.jsx";
+import css from "./App.module.css";
 
 function App() {
   return (
     <>
-    <h1>MyAPP</h1>
+      <CampersList />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
