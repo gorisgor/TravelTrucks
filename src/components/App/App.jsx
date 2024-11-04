@@ -1,9 +1,9 @@
-import css from './App.css'
+import css from './App.module.css'
 
 function App() {
   return (
     <>
-      
+    <h1>MyAPP</h1>
     </>
   )
 }
