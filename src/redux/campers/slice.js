@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchCampers } from "./operations";
+import { fetchCampers, fetchCamper } from "./operations";
 
 const initialState = {
   campers: [],
@@ -18,6 +18,10 @@ const initialState = {
       bathroom: false,
     },
   },
+  loading: false,
+  error: false,
+  favorites:[],
+  
 };
 const campersSlice = createSlice({
   name: "campers",
@@ -39,14 +43,35 @@ const campersSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchCampers.pending, (state) => {
-        state.status = "loading";
+        state.loading = true;
+        state.error = false;
       })
       .addCase(fetchCampers.fulfilled, (state, action) => {
         state.campers = action.payload.items;
-        state.status = "succeeded";
+        state.loading = false;
       })
       .addCase(fetchCampers.rejected, (state) => {
-        state.status = "failed";
+        state.loading = false;
+        state.error = true;
+      })
+      .addCase(fetchCamper.pending, (state) => {
+        state.loading = true;
+        state.error = false;
+      })
+      .addCase(fetchCamper.fulfilled, (state, action) => {
+        const camper = action.payload;
+        const existingCamperIndex = state.campers.findIndex((c) => c.id === camper.id);
+
+        if (existingCamperIndex !== -1) {
+          state.campers[existingCamperIndex] = camper;
+        } else {
+          state.campers.push(camper);
+        }
+        state.loading = false;
+      })
+      .addCase(fetchCamper.rejected, (state) => {
+        state.loading = false;
+        state.error = true;
       });
   },
 });
