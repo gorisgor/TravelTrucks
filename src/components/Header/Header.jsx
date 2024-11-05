@@ -4,7 +4,7 @@ import css from './Header.module.css';
 
 
 export default function Header (){
-    return <header>
+    return <header className={css.header}>
         <Logo/>
         <Navigation/>
     </header>

@@ -1,0 +1,19 @@
+.header {
+    display: flex;
+    align-items: center;
+    gap: 450px;
+    height: 72px;
+    position: relative;
+    z-index: 1;  
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    height: 72px;
+    left: -64px;
+    right: -64px;
+    border-bottom: 1px solid #F2F4F7;
+    background-color: #F7F7F7;
+}

@@ -1,0 +1,32 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 696px;
+    padding-top: 260px;
+    position: relative;
+    z-index: 1;
+    background: transparent;
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: -64px;
+    right: -64px;
+    background-image: url('/img/homepage-bg-1x-min.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.title{
+    color: #f7f7f7;
+}
+
+.subtitle {
+    color: #f7f7f7
+}
