@@ -12,12 +12,10 @@ export const selectFilteredCampers = createSelector(
         .toLowerCase()
         .includes(filters.location.toLowerCase());
       const matchesBodyType =
-        camper.bodyType === filters.bodyType || filters.bodyType === "";
-      const matchesEquipments = Object.keys(filters.equipments).every(
-        (equipments) => {
-          return (
-            !filters.equipments[equipments] || camper.equipments[equipments]
-          );
+        camper.form === filters.bodyType || filters.bodyType === "";
+      const matchesEquipments = Object.keys(filters.equipment).every(
+        (equipment) => {
+          return !filters.equipment[equipment] || camper[equipment];
         }
       );
 

@@ -20,8 +20,7 @@ const initialState = {
   },
   loading: false,
   error: false,
-  favorites:[],
-  
+  favorites: [],
 };
 const campersSlice = createSlice({
   name: "campers",
@@ -47,6 +46,7 @@ const campersSlice = createSlice({
         state.error = false;
       })
       .addCase(fetchCampers.fulfilled, (state, action) => {
+        console.log("Fetched campers:", action.payload.items);
         state.campers = action.payload.items;
         state.loading = false;
       })
@@ -60,7 +60,9 @@ const campersSlice = createSlice({
       })
       .addCase(fetchCamper.fulfilled, (state, action) => {
         const camper = action.payload;
-        const existingCamperIndex = state.campers.findIndex((c) => c.id === camper.id);
+        const existingCamperIndex = state.campers.findIndex(
+          (c) => c.id === camper.id
+        );
 
         if (existingCamperIndex !== -1) {
           state.campers[existingCamperIndex] = camper;
