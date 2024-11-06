@@ -1,39 +1,39 @@
 .title {
-    font-weight: 400;
-font-size: 16px;
-line-height: 1.50;
-color:#6C717B;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.50;
+  color: #6C717B;
+  margin-top: 48px;
 }
 
 
 .inputWrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
-    margin-top: 8px;
-    background-color: #F2F4F7;
-  }
-  
-  .inputWrapper .icon {
-    position: absolute;
-    left: 18px;
-    width: 20px;
-    height: 20px;
-    fill: #888; 
-  }
-  
-  .inputWrapper input {
-    padding-left: 46px; 
-    border-radius: 12px;
-    padding: 16px 214px 16px 48px;
-    width: 360px;
-    height: 56px;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.50;
-  }
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+  background-color: #F2F4F7;
+}
 
-  .inputWrapper .iconActive {
-    fill: #000000; 
-  }
-  
+.inputWrapper .icon {
+  position: absolute;
+  left: 18px;
+  width: 20px;
+  height: 20px;
+  fill: #888;
+}
+
+.inputWrapper input {
+  padding-left: 46px;
+  border-radius: 12px;
+  padding: 16px 214px 16px 48px;
+  max-width: 360px;
+  min-height: 56px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.50;
+}
+
+.inputWrapper .iconActive {
+  fill: #000000;
+}

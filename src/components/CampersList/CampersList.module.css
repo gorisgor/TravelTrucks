@@ -1,0 +1,26 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-top: 39px;
+    margin-bottom: 52px;
+}
+
+.loadMoreBtn {
+    margin-top: 17px;
+    border: 1px solid #DADDE1;
+    border-radius: 200px;
+    padding: 16px 32px;
+    width: 145px;
+    height: 56px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.50;
+    letter-spacing: -0.01em;
+    color: #101828;
+    align-self: center;
+}
+
+.loadMoreBtn:hover {
+    border: 1px solid #D84343;
+}
