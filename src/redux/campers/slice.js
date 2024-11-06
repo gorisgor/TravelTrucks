@@ -3,12 +3,25 @@ import { fetchCampers, fetchCamper } from "./operations";
 
 const initialState = {
   items: [],
+  favorites: [],
   loading: false,
   error: false,
 };
 const campersSlice = createSlice({
   name: "campers",
   initialState,
+  reducers: {
+    addToFavorites: (state, action) => {
+      const camper = action.payload;
+      if (!state.favorites.some((fav) => fav.id === camper.id)) {
+        state.favorites.push(camper);
+      }
+    },
+    removeFromFavorites: (state, action) => {
+      const camperId = action.payload;
+      state.favorites = state.favorites.filter((fav) => fav.id !== camperId);
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchCampers.pending, (state) => {
@@ -35,9 +48,9 @@ const campersSlice = createSlice({
         );
 
         if (existingCamperIndex !== -1) {
-          state.campers[existingCamperIndex] = camper;
+          state.items[existingCamperIndex] = camper;
         } else {
-          state.campers.push(camper);
+          state.items.push(camper);
         }
         state.loading = false;
       })
@@ -48,5 +61,5 @@ const campersSlice = createSlice({
   },
 });
 
-
+export const { addToFavorites, removeFromFavorites } = campersSlice.actions;
 export default campersSlice.reducer;

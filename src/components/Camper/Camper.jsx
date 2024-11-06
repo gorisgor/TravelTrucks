@@ -1,16 +1,42 @@
 import css from "./Camper.module.css";
-export default function Camper({ camper }) {
+import { useDispatch, useSelector } from 'react-redux';
+import { addToFavorites, removeFromFavorites } from '../../redux/campers/slice';
+import { selectFavorite } from "../../redux/campers/selectors";
+import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
 
+
+export default function Camper({ camper }) {
+  const dispatch = useDispatch();
+  const favorites = useSelector(selectFavorite);
+  const isFavorite = favorites.some((fav) => fav.id === camper.id);
+
+  const handleFavoriteToggle = () => {
+    if (isFavorite) {
+      dispatch(removeFromFavorites(camper.id));
+    } else {
+      dispatch(addToFavorites(camper));
+    }
+  };
   return (
-    <div>
-      <h4>{camper.name}</h4>
-      <p>{camper.price}</p>
-      <p>{camper.location}</p>
-      <p>{camper.description}</p>  
-      <p>{camper.rating}({camper.reviews ? camper.reviews.length : 0} Reviews)</p>
-      <img src={camper.gallery[0].original} alt="Camper Image 1" />
-      <div>
-        <div>
+    <div className={css.container}>
+      <div className={css.image}>
+        <img src={camper.gallery[0].thumb} alt="Camper Image 1" />
+      </div>
+      <h4 className={css.title}>{camper.name}</h4>
+      <p className={css.price}>{camper.price}</p>
+      <div className="favorite-icon" onClick={handleFavoriteToggle}>
+      {isFavorite ? (
+          <AiOutlineHeart color="yellow" size={24} /> 
+        ) : (
+          <AiOutlineHeart color="black" size={24} /> 
+        )}
+      </div>
+      <p className={css.location}>{camper.location}</p>
+      <p className={css.description}>{camper.description}</p>  
+      <p className={css.rating}>{camper.rating}({camper.reviews ? camper.reviews.length : 0} Reviews)</p>
+      
+   
+        <div >
           <ul>
             <li> {camper.AC&& <p>AC</p>}</li>
             <li> {camper.bathroom && <p>Bathroom</p>}</li>
@@ -24,7 +50,6 @@ export default function Camper({ camper }) {
           </ul>
         </div>
       </div>
-    </div>
   );
 }
 
