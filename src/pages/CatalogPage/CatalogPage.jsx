@@ -9,13 +9,13 @@ export default function CatalogPage() {
     <div className={css.container}>
       <div className={css.wraper}>
         <Location />
-        <div className={css.filters}>
+        {/* <div className={css.filters}>
           <VehicleEquipment />
           <VehicleType />
           <button className={css.btn} type="button">
             Search
           </button>
-        </div>
+        </div> */}
       </div>
       <CampersList />
     </div>
