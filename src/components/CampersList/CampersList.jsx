@@ -4,7 +4,6 @@ import Camper from "../Camper/Camper.jsx";
 
 export default function CampersList() {
   const filteredCampers = useSelector(selectFilteredCampers);
-
   return (
     <div>
       {filteredCampers.map((camper) => (
