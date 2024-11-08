@@ -3,14 +3,24 @@ import { createSlice } from "@reduxjs/toolkit";
 export const filtersSlice = createSlice({
     name: 'filters',
     initialState: {
-        filter: '',
+        location: '',
+        equipments:[],
+        type:'',
     },
     reducers: {
-        changeFilter (state, action){
-            state.filter = action.payload;
+        changeLocation (state, action){
+            state.location = action.payload;
         },
+        toggleEquipFilter(state, action) {
+            const equipment = action.payload;
+            if (state.equipments.includes(equipment)) {
+              state.equipments = state.equipments.filter((item) => item !== equipment);
+            } else {
+              state.equipments.push(equipment);
+            }
+          },
     },
 });
 
 export default filtersSlice.reducer;
-export const {changeFilter} = filtersSlice.actions;
+export const {changeLocation, toggleEquipFilter} = filtersSlice.actions;

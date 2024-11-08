@@ -42,7 +42,7 @@ const campersSlice = createSlice({
         state.error = false;
       })
       .addCase(fetchCamper.fulfilled, (state, action) => {
-        const camper = action.payload;
+        const items = action.payload;
         const existingCamperIndex = state.campers.findIndex(
           (c) => c.id === camper.id
         );
