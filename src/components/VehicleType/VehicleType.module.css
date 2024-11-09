@@ -1,0 +1,44 @@
+.title {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 120%;
+    color: #6C717B;
+    margin-top: 32px;
+}
+
+.line {
+    width: 360px;
+    height: 1px;
+    border: 1px solid #DADDE1;
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+.typeWrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.btn {
+    border: 1px solid #DADDE1;
+    border-radius: 12px;
+    padding: 16px 18px;
+    width: 112px;
+    height: 96px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.btn svg {
+    font-size: 32px;
+}
+
+.active {
+    border: 1px solid #E44848;
+}

@@ -1,25 +1,24 @@
-import React, { useState } from 'react';
-import Features from '../../components/Features/Features';
-import Reviews from '../../components/Reviews/Reviews';
-import css from './CamperPage.module.css';
-
-
+import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
+import { useEffect } from "react";
+import { fetchCamper } from "../../redux/campers/operations.js";
+import { selectCamper } from "../../redux/campers/selectors.js";
 
 export default function CamperPage() {
-  const [activeTab, setActiveTab] = useState("features");
+  const dispatch = useDispatch();
+  const { id } = useParams();
+  const camper = useSelector(selectCamper);
+
+  useEffect(() => {
+    if (id) {
+      dispatch(fetchCamper(id));
+    }
+  }, [dispatch, id]);
 
   return (
     <div>
-      <h1>Camper Details</h1>
-      <div>
-        <button onClick={() => setActiveTab("features")}>Features</button>
-        <button onClick={() => setActiveTab("reviews")}>Reviews</button>
-      </div>
-
-      {activeTab === "features" && <Features />}
-      {activeTab === "reviews" && <Reviews />}
+      <h1>{camper.name}</h1>
+      <p>{camper.description}</p>
     </div>
   );
 }
-
-

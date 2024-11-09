@@ -27,8 +27,9 @@ export default function Camper({ camper }) {
   };
   const navigate = useNavigate();
   const handleClick = () => {
-    navigate("/catalog/:id");
+    navigate(`/catalog/${camper.id}`);
   };
+
   return (
     <div className={css.container}>
       <div className={css.image}>

@@ -29,7 +29,6 @@ const campersSlice = createSlice({
         state.error = false;
       })
       .addCase(fetchCampers.fulfilled, (state, action) => {
-        console.log("Fetched campers:", action.payload.items);
         state.items = action.payload.items;
         state.loading = false;
       })
@@ -42,16 +41,7 @@ const campersSlice = createSlice({
         state.error = false;
       })
       .addCase(fetchCamper.fulfilled, (state, action) => {
-        const items = action.payload;
-        const existingCamperIndex = state.campers.findIndex(
-          (c) => c.id === camper.id
-        );
-
-        if (existingCamperIndex !== -1) {
-          state.items[existingCamperIndex] = camper;
-        } else {
-          state.items.push(camper);
-        }
+        state.camper = action.payload;
         state.loading = false;
       })
       .addCase(fetchCamper.rejected, (state) => {

@@ -1,6 +1,5 @@
 import Location from "../../components/Location/Location";
-import VehicleEquipment from "../../components/VehicleEquipment/VehicleEquipment.jsx";
-import VehicleType from "../../components/VehicleType/VehicleType.jsx";
+import Filters from "../../components/Filters/Filters.jsx";
 import CampersList from "../../components/CampersList/CampersList";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
@@ -17,13 +16,9 @@ export default function CatalogPage() {
     <div className={css.container}>
       <div className={css.wraper}>
         <Location />
-        {/* <div className={css.filters}>
-          <VehicleEquipment />
-          <VehicleType />
-          <button className={css.btn} type="button">
-            Search
-          </button>
-        </div> */}
+        <div className={css.filters}>
+          <Filters />
+        </div>
       </div>
       <CampersList />
     </div>

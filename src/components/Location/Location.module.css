@@ -12,7 +12,9 @@
   display: flex;
   align-items: center;
   margin-top: 8px;
-  background-color: #F2F4F7;
+
+  max-width: 360px;
+  min-height: 56px;
 }
 
 .inputWrapper .icon {
@@ -32,6 +34,7 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 1.50;
+  background-color: #F2F4F7;
 }
 
 .inputWrapper .iconActive {
