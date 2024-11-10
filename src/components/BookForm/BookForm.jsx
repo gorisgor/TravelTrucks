@@ -16,7 +16,7 @@ export default function BookForm() {
       email: Yup.string()
         .email("Invalid email address")
         .required("Email is required"),
-      bookingDate: Yup.string().required("Booking date is required"),
+      bookingDate: Yup.date("dd.mm.yyyy").required("Booking date is required"),
     }),
     onSubmit: (values, actions) => {
       actions.resetForm();
@@ -68,7 +68,7 @@ export default function BookForm() {
           value={formik.values.bookingDate}
         />
         {formik.touched.bookingDate && formik.errors.bookingDate && (
-          <p>{formik.errors.bookingDate}</p>
+          <p>{"dd.mm.yyyy"}</p>
         )}
         <textarea
           className={css.comment}

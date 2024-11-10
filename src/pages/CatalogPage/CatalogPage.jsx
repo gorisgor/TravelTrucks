@@ -1,7 +1,7 @@
 import Location from "../../components/Location/Location";
 import Filters from "../../components/Filters/Filters.jsx";
 import CampersList from "../../components/CampersList/CampersList";
-import { useEffect } from "react";
+import { useEffect, useLocation } from "react";
 import { useDispatch } from "react-redux";
 import { fetchCampers } from "../../redux/campers/operations.js";
 import css from "./CatalogPage.module.css";
