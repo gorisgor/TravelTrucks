@@ -19,6 +19,7 @@
     letter-spacing: -0.01em;
     color: var(--main);
     align-self: center;
+    cursor: pointer;
 }
 
 .loadMoreBtn:hover {
