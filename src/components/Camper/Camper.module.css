@@ -1,6 +1,6 @@
 .container {
   display: flex;
-  border: 1px solid #DADDE1;
+  border: 1px solid var(--gray-light);
   border-radius: 20px;
   padding: 24px;
   min-width: 888px;
@@ -35,14 +35,14 @@
   font-weight: 600;
   font-size: 24px;
   line-height: 1.33;
-  color: #101828;
+  color: var(--main);
 }
 
 .price {
   font-weight: 600;
   font-size: 24px;
   line-height: 1.33;
-  color: #101828;
+  color: var(--main);
 }
 
 .heart {
@@ -84,7 +84,7 @@
   align-items: center;
   border-radius: 100px;
   padding: 12px 18px;
-  background-color: #F2F4F7;
+  background-color: var(--badges);
   font-weight: 500;
   font-size: 16px;
   line-height: 1.50;
@@ -103,7 +103,7 @@
   padding: 16px 40px;
   width: 166px;
   height: 56px;
-  background: #E44848;
+  background: var(--button);
   font-weight: 500;
   font-size: 16px;
   line-height: 1.50;
@@ -112,5 +112,5 @@
 }
 
 .btn:hover {
-  background-color: #D84343;
+  background-color: var(--button-hover);
 }

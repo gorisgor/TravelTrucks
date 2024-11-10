@@ -7,6 +7,6 @@
     align-items: center;
 }
 
-.text{
-    color:#E44848
+.text {
+    color: var(--rating)
 }

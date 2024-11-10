@@ -3,7 +3,8 @@ import { fetchCampers, fetchCamper } from "./operations";
 
 const initialState = {
   items: [],
-  favorites: [],
+  favorites: JSON.parse(localStorage.getItem("favorites")) || [],
+  camper: {},
   loading: false,
   error: false,
 };
@@ -15,11 +16,13 @@ const campersSlice = createSlice({
       const camper = action.payload;
       if (!state.favorites.some((fav) => fav.id === camper.id)) {
         state.favorites.push(camper);
+        localStorage.setItem("favorites", JSON.stringify(state.favorites));
       }
     },
     removeFromFavorites: (state, action) => {
       const camperId = action.payload;
       state.favorites = state.favorites.filter((fav) => fav.id !== camperId);
+      localStorage.setItem("favorites", JSON.stringify(state.favorites));
     },
   },
   extraReducers: (builder) => {

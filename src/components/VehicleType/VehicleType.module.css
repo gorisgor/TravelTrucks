@@ -2,14 +2,14 @@
     font-weight: 600;
     font-size: 20px;
     line-height: 120%;
-    color: #6C717B;
+    color: var(--gray);
     margin-top: 32px;
 }
 
 .line {
     width: 360px;
     height: 1px;
-    border: 1px solid #DADDE1;
+    border: 1px solid var(--gray-light);
     margin-top: 24px;
     margin-bottom: 24px;
 }
@@ -21,7 +21,7 @@
 }
 
 .btn {
-    border: 1px solid #DADDE1;
+    border: 1px solid var(--gray-light);
     border-radius: 12px;
     padding: 16px 18px;
     width: 112px;
@@ -31,7 +31,7 @@
     justify-content: center;
     align-items: center;
     gap: 8px;
-    background-color: #fff;
+    background-color: var(--white);
     cursor: pointer;
 }
 
@@ -40,5 +40,5 @@
 }
 
 .active {
-    border: 1px solid #E44848;
+    border: 1px solid var(--button);
 }

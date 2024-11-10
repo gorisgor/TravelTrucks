@@ -2,17 +2,15 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 1.50;
-  color: #6C717B;
+  color: var(--gray);
   margin-top: 48px;
 }
-
 
 .inputWrapper {
   position: relative;
   display: flex;
   align-items: center;
   margin-top: 8px;
-
   max-width: 360px;
   min-height: 56px;
 }
@@ -22,7 +20,7 @@
   left: 18px;
   width: 20px;
   height: 20px;
-  fill: #888;
+  fill: var(--gray-light);
 }
 
 .inputWrapper input {
@@ -34,9 +32,9 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 1.50;
-  background-color: #F2F4F7;
+  background-color: var(--badges);
 }
 
 .inputWrapper .iconActive {
-  fill: #000000;
+  fill: var(--main);
 }

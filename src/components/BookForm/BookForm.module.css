@@ -1,0 +1,30 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    padding: 44px 57px;
+    background-color: var(--inputs);
+    min-width: 641px;
+    max-height: 588px;
+}
+
+.title {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.20;
+    color: var(--main);
+}
+
+.subTitle {
+    margin-top: 8px;
+    line-height: 1.50;
+    color: var(--gray);
+}
+
+.form {
+    max-width: 527px;
+    max-height: 420px;
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+}
