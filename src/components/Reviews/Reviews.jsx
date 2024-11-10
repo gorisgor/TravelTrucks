@@ -25,16 +25,18 @@ export default function Reviews({ reviews }) {
       {reviews && reviews.length > 0 ? (
         reviews.map((review, index) => (
           <div key={index} className={css.review}>
-            <div className={css.avatar}>
-              <span className={css.letter}>{review.reviewer_name[0]}</span>
-            </div>
-            <div className={css.reviewContent}>
-              <h5 className={css.reviewerName}>{review.reviewer_name}</h5>
-              <div className={css.stars}>
-                {renderStars(review.reviewer_rating)}
+            <div className={css.wrap}>
+              <div className={css.avatar}>
+                <span className={css.letter}>{review.reviewer_name[0]}</span>
               </div>
-              <p className={css.comment}>{review.comment}</p>
+              <div className={css.reviewContent}>
+                <h5 className={css.reviewerName}>{review.reviewer_name}</h5>
+                <div className={css.stars}>
+                  {renderStars(review.reviewer_rating)}
+                </div>
+              </div>
             </div>
+            <p className={css.comment}>{review.comment}</p>
           </div>
         ))
       ) : (

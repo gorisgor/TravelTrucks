@@ -1,9 +1,10 @@
 .container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     border-radius: 10px;
     padding: 44px 57px;
-    background-color: var(--inputs);
+    background-color: var(--white);
     min-width: 641px;
     max-height: 588px;
 }
@@ -27,4 +28,49 @@
     margin-top: 24px;
     display: flex;
     flex-direction: column;
+    gap: 14px;
+}
+
+.input {
+    min-width: 527px;
+    max-height: 60px;
+    background-color: var(--inputs);
+    border: none;
+    border-radius: 12px;
+    padding: 18px 337px 18px 18px;
+    width: 527px;
+    height: 60px;
+}
+
+.comment {
+    min-width: 527px;
+    max-height: 118px;
+    border-radius: 10px;
+    padding: 18px 308px 76px 18px;
+    width: 527px;
+    height: 118px;
+}
+
+.comment textarea {
+    resize: none;
+}
+
+.btn {
+    margin-top: 10px;
+    border-radius: 200px;
+    padding: 16px 63px;
+    width: 166px;
+    height: 56px;
+    background: var(--button);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.50;
+    letter-spacing: -0.01em;
+    color: #ffffff;
+    align-self: center;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--button-hover);
 }

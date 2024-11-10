@@ -18,7 +18,8 @@ export default function BookForm() {
         .required("Email is required"),
       bookingDate: Yup.string().required("Booking date is required"),
     }),
-    onSubmit: (values) => {
+    onSubmit: (values, actions) => {
+      actions.resetForm();
       toast.success("Booking successful!");
     },
   });
@@ -30,63 +31,58 @@ export default function BookForm() {
         Stay connected! We are always ready to help you.
       </p>
       <form className={css.form} onSubmit={formik.handleSubmit}>
-        <div>
-          <label htmlFor="name">Name*</label>
-          <input
-            id="name"
-            name="name"
-            type="text"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.name}
-          />
-          {formik.touched.name && formik.errors.name && (
-            <p>{formik.errors.name}</p>
-          )}
-        </div>
+        <input
+          className={css.input}
+          id="name"
+          name="name"
+          type="text"
+          placeholder="Name*"
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          value={formik.values.name}
+        />
+        {formik.touched.name && formik.errors.name && (
+          <p>{formik.errors.name}</p>
+        )}
+        <input
+          className={css.input}
+          id="email"
+          name="email"
+          type="email"
+          placeholder="Email*"
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          value={formik.values.email}
+        />
+        {formik.touched.email && formik.errors.email && (
+          <p>{formik.errors.email}</p>
+        )}
+        <input
+          className={css.input}
+          id="bookingDate"
+          name="bookingDate"
+          type="text"
+          placeholder="Booking date*"
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          value={formik.values.bookingDate}
+        />
+        {formik.touched.bookingDate && formik.errors.bookingDate && (
+          <p>{formik.errors.bookingDate}</p>
+        )}
+        <textarea
+          className={css.comment}
+          id="comment"
+          name="comment"
+          placeholder="Comment"
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          value={formik.values.comment}
+        />
 
-        <div>
-          <label htmlFor="email">Email*</label>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.email}
-          />
-          {formik.touched.email && formik.errors.email && (
-            <p>{formik.errors.email}</p>
-          )}
-        </div>
-
-        <div>
-          <label htmlFor="bookingDate">Booking Date*</label>
-          <input
-            id="bookingDate"
-            name="bookingDate"
-            type="text"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.bookingDate}
-          />
-          {formik.touched.bookingDate && formik.errors.bookingDate && (
-            <p>{formik.errors.bookingDate}</p>
-          )}
-        </div>
-
-        <div>
-          <label htmlFor="comment">Comment (optional)</label>
-          <textarea
-            id="comment"
-            name="comment"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.comment}
-          />
-        </div>
-
-        <button type="submit">Book Now</button>
+        <button className={css.btn} type="submit">
+          Send
+        </button>
       </form>
     </div>
   );

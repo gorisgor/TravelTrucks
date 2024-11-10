@@ -1,11 +1,18 @@
 .container {
     display: flex;
     flex-direction: column;
+    gap: 44px;
     border-radius: 10px;
     padding: 44px 52px;
     background-color: var(--white);
     max-width: 641px;
     max-height: 588px;
+}
+
+.wrap {
+    display: flex;
+    gap: 16px;
+    align-items: center;
 }
 
 .avatar {
@@ -34,4 +41,10 @@
 .star svg {
     background: var(--badges);
 
+}
+
+.comment {
+    margin-top: 16px;
+    line-height: 1.5;
+    color: var(--text);
 }
